@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
-using Shopping.Business.Model;
 
-namespace Shopping.Business.Helper
+namespace Shopping.Helper
 {
     public static class GetTableData<T>
     {
@@ -15,7 +13,7 @@ namespace Shopping.Business.Helper
         {
             using (IDbConnection db = new SqlConnection(ConfigurationManager.AppSettings["GroceryDB"]))
             {
-               return db.Query<T>("Select * From " + name).ToList();
+                return db.Query<T>("Select * From " + name).ToList();
             }
         }
 

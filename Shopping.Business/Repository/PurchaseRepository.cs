@@ -1,5 +1,4 @@
-﻿using Shopping.Business.Helper;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Shopping.Business.Repository.Interfaces;
 using System.Data;
 using System.Data.SqlClient;
@@ -24,11 +23,11 @@ namespace Shopping.Business.Repository
         {
             try
             {
-                string sqlQuery = "Insert Into Purchase (Id, CustomerId, Status, Date, Total) " +
+                string query = "Insert Into Purchase (Id, CustomerId, Status, Date, Total) " +
                                   "Values(@Id, @CustomerId, @Status, @Date, @Total)";
 
-                int rowsAffected = DbConnection.Execute(sqlQuery, Purchase);
-                return rowsAffected > 0 ? true : false;
+                int count = DbConnection.Execute(query, Purchase);
+                return count == 1 ? true : false;
             }
             catch (Exception)
             {

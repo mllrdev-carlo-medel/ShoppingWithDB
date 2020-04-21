@@ -9,7 +9,6 @@
     <Folder Include="Repository\" />
     <Folder Include="Enums\" />
     <Folder Include="Repository\Interfaces\" />
-    <Folder Include="Helper\" />
     <Folder Include="Manager\" />
     <Folder Include="Manager\Interfaces\" />
   </ItemGroup>

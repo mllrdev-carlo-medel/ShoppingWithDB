@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
 using Shopping.Business.Model;
-using Shopping.Business.Helper;
 using Shopping.Business.Repository.Interfaces;
 
 namespace Shopping.Business.Repository
@@ -24,11 +23,11 @@ namespace Shopping.Business.Repository
         {
             try
             {
-                string sqlQuery = "Insert Into PurchaseItem (PurchaseId, ItemId, Quantity, Subtotal) " +
+                string query = "Insert Into PurchaseItem (PurchaseId, ItemId, Quantity, Subtotal) " +
                                   "Values(@PurchaseId, @ItemId, @Quantity, @Subtotal)";
 
-                int rowsAffected = DbConnection.Execute(sqlQuery, purchaseItem);
-                return rowsAffected > 0 ? true : false;
+                int count = DbConnection.Execute(query, purchaseItem);
+                return count == 1 ? true : false;
             }
             catch (Exception)
             {

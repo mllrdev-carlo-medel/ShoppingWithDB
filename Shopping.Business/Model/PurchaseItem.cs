@@ -15,6 +15,5 @@ namespace Shopping.Business.Model
             Quantity = quantity;
             SubTotal = subtotal;
         }
-
     }
 }

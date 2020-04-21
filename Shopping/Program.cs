@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Shopping.Business.Helper;
 using Shopping.Business.Model;
 using Shopping.Business.Manager;
+using Shopping.Helper;
 
 
 namespace Shopping
@@ -27,7 +27,7 @@ namespace Shopping
                 cs.FirstName = "sasadasdd";
                 customer.Update(cs);
             }
-            
+
             //customer.Show(customer.GetAll());
             /*
             for (int x = 1; x <= 5; x++)
