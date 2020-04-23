@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Shopping.Business.Model;
+using Shopping.Business.Entity;
 using Shopping.Business.Manager;
 using Shopping.Helper;
+using log4net.Config;
 
 
 namespace Shopping
@@ -11,31 +12,40 @@ namespace Shopping
     {
         public static void Main(string[] args)
         {
+            BasicConfigurator.Configure();
+            
             CustomerManager customer = new CustomerManager();
             
+            List<Customer> customers = customer.GetAll();
+
+            Console.WriteLine($"{customers[0].LastName}");
+
             //customer.Show(customer.GetAll());
 
-            int id = Convert.ToInt32(Console.ReadLine());
+            List<int> ids = new List<int>();
 
-            customer.Delete(id);
+            ids.Add(Convert.ToInt32(Console.ReadLine()));
+
+            customer.Delete(ids.ToArray());
 
             //customer.Show(customer.GetAll());
             
             Customer cs = customer.GetById(Convert.ToInt32(Console.ReadLine()));
             if (cs != null)
             {
-                cs.FirstName = "sasadasdd";
+                cs.FirstName = "sasadasddasa";
                 customer.Update(cs);
             }
-
+            
             //customer.Show(customer.GetAll());
             /*
             for (int x = 1; x <= 5; x++)
             {
                 Customer cs1 = new Customer(GenerateID.GetGeneratedID(), "casca", "a", "asd", "f", "sadasd", "asdas@masd", "cebu");
                 customer.Add(cs1);
-            }*/
-
+                Console.WriteLine("a");
+            }
+            */
             //customer.Add(cs1);
 
             //customer.Show(customer.GetAll());

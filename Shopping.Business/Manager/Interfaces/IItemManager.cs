@@ -1,5 +1,5 @@
 ﻿using System;
-using Shopping.Business.Model;
+using Shopping.Business.Entity;
 
 namespace Shopping.Business.Manager.Interfaces
 {

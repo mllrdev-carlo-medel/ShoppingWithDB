@@ -54,14 +54,20 @@
     <Reference Include="Dapper">
       <HintPath>..\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Helper\GenerateId.cs" />
     <Compile Include="Helper\GetTableData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\app.config" />
+    <None Include="Config\packages.config" />
+    <None Include="Config\log4net.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shopping.Business\Shopping.Business.csproj">

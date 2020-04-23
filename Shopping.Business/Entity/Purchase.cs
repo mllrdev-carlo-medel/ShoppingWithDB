@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Shopping.Business.Model
+namespace Shopping.Business.Entity
 {
     public class Purchase
     {

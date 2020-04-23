@@ -5,9 +5,9 @@ namespace Shopping.Business.Repository.Interfaces
     public interface IRepository<T>
     {
         List<T> GetAll();
-        bool Add(T record);
+        bool Add(T data);
         T GetById(int id);
-        bool Update(T record);
-        bool Delete(int id);
+        bool Update(T data);
+        bool Delete(int[] id);
     }
 }
